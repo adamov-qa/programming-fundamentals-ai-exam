@@ -3,6 +3,9 @@ const orderValueInput = document.getElementById("orderValue");
 const leadRateInput = document.getElementById("leadRate");
 const prospectRateInput = document.getElementById("prospectRate");
 
+const leadRateValue = document.getElementById("leadRateValue");
+const prospectRateValue = document.getElementById("prospectRateValue");
+
 const prospectsOutput = document.getElementById("prospects");
 const leadsOutput = document.getElementById("leads");
 const customersOutput = document.getElementById("customers");
@@ -12,6 +15,9 @@ function calculateResults() {
     const orderValue = Number(orderValueInput.value);
     const leadRate = Number(leadRateInput.value) / 100;
     const prospectRate = Number(prospectRateInput.value) / 100;
+
+    leadRateValue.textContent = `${leadRateInput.value}%`;
+    prospectRateValue.textContent = `${prospectRateInput.value}%`;
 
     let customers = 0;
     let leads = 0;
