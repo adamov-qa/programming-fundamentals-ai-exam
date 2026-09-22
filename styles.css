@@ -106,3 +106,49 @@ body {
 .sliders input[type="range"] {
     width: 100%;
 }
+@media (max-width: 900px) {
+    .app {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-panel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sliders {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .app {
+        padding: 12px;
+    }
+
+    .sidebar,
+    .chart-panel,
+    .stat-card,
+    .sliders {
+        padding: 16px;
+    }
+
+    .stats-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-panel {
+        min-height: 280px;
+    }
+
+    .chart-placeholder {
+        min-height: 200px;
+    }
+
+    .stat-card strong {
+        font-size: 26px;
+    }
+}
