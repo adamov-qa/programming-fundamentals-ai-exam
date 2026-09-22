@@ -37,8 +37,27 @@
         <main class="dashboard">
             <section class="chart-panel">
                 <h2>Campaign Forecast</h2>
-                <div class="chart-placeholder">
-                    Chart area
+
+                <div class="chart-visualization">
+                    <div class="chart-bars">
+                        <div class="bar-column">
+                            <span class="bar-number" id="prospectsChartValue">125</span>
+                            <div class="bar prospects-bar" id="prospectsBar"></div>
+                            <span class="bar-label">Prospects</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <span class="bar-number" id="leadsChartValue">25</span>
+                            <div class="bar leads-bar" id="leadsBar"></div>
+                            <span class="bar-label">Leads</span>
+                        </div>
+
+                        <div class="bar-column">
+                            <span class="bar-number" id="customersChartValue">10</span>
+                            <div class="bar customers-bar" id="customersBar"></div>
+                            <span class="bar-label">Customers</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -61,16 +80,16 @@
 
             <section class="sliders">
                 <label for="leadRate">
-    Lead Response Rate:
-    <span id="leadRateValue">40%</span>
-</label>
-<input type="range" id="leadRate" min="1" max="100" value="40">
+                    Lead Response Rate:
+                    <span id="leadRateValue">40%</span>
+                </label>
+                <input type="range" id="leadRate" min="1" max="100" value="40">
 
-<label for="prospectRate">
-    Prospect Response Rate:
-    <span id="prospectRateValue">20%</span>
-</label>
-<input type="range" id="prospectRate" min="1" max="100" value="20">
+                <label for="prospectRate">
+                    Prospect Response Rate:
+                    <span id="prospectRateValue">20%</span>
+                </label>
+                <input type="range" id="prospectRate" min="1" max="100" value="20">
             </section>
         </main>
     </div>

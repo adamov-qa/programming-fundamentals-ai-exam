@@ -10,11 +10,32 @@ const prospectsOutput = document.getElementById("prospects");
 const leadsOutput = document.getElementById("leads");
 const customersOutput = document.getElementById("customers");
 
+const prospectsBar = document.getElementById("prospectsBar");
+const leadsBar = document.getElementById("leadsBar");
+const customersBar = document.getElementById("customersBar");
+
+const prospectsChartValue = document.getElementById("prospectsChartValue");
+const leadsChartValue = document.getElementById("leadsChartValue");
+const customersChartValue = document.getElementById("customersChartValue");
+
+function updateChart(prospects, leads, customers) {
+    const maxValue = Math.max(prospects, leads, customers, 1);
+    const maxHeight = 180;
+
+    prospectsBar.style.height = `${(prospects / maxValue) * maxHeight}px`;
+    leadsBar.style.height = `${(leads / maxValue) * maxHeight}px`;
+    customersBar.style.height = `${(customers / maxValue) * maxHeight}px`;
+
+    prospectsChartValue.textContent = prospects;
+    leadsChartValue.textContent = leads;
+    customersChartValue.textContent = customers;
+}
+
 function calculateResults() {
-    const revenue = Number(revenueInput.value);
-    const orderValue = Number(orderValueInput.value);
-    const leadRate = Number(leadRateInput.value) / 100;
-    const prospectRate = Number(prospectRateInput.value) / 100;
+    const revenue = Math.max(0, Number(revenueInput.value) || 0);
+    const orderValue = Math.max(0, Number(orderValueInput.value) || 0);
+    const leadRate = Math.max(0, Number(leadRateInput.value) || 0) / 100;
+    const prospectRate = Math.max(0, Number(prospectRateInput.value) || 0) / 100;
 
     leadRateValue.textContent = `${leadRateInput.value}%`;
     prospectRateValue.textContent = `${prospectRateInput.value}%`;
@@ -38,6 +59,8 @@ function calculateResults() {
     customersOutput.textContent = customers;
     leadsOutput.textContent = leads;
     prospectsOutput.textContent = prospects;
+
+    updateChart(prospects, leads, customers);
 }
 
 revenueInput.addEventListener("input", calculateResults);
